@@ -1,0 +1,151 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  list-style: none;
+}
+.App {
+  text-align: center;
+  padding: 20px 0;
+
+  .table {
+    border-collapse: collapse;
+    margin: 25px 0;
+    font-size: 0.9em;
+    font-family: sans-serif;
+    min-width: 600px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
+
+    thead {
+      tr {
+        background-color: #009879;
+        color: #ffffff;
+      }
+    }
+    th,
+    td {
+      padding: 12px 15px;
+    }
+    tbody {
+      tr {
+        border-bottom: 1px solid #dddddd;
+
+        &:nth-of-type(even) {
+          background-color: #f3f3f3;
+        }
+        &:last-of-type {
+          border-bottom: 2px solid #009879;
+        }
+        .active-row {
+          font-weight: bold;
+          color: #009879;
+        }
+      }
+    }
+  }
+
+  .register-form {
+    form {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      width: 100%;
+      margin-top: 20px;
+    }
+    input {
+      outline: none;
+      display: inline-block;
+      height: 34px;
+      bottom: 14px;
+      right: 9px;
+      border-radius: 20px;
+      width: 400px;
+      box-sizing: border-box;
+      padding: 0 18px;
+      margin: 20px 0 5px;
+    }
+    span {
+      margin-bottom: 10px;
+      color: red;
+    }
+  }
+
+  @media(max-width: 900px) {
+    .register-form {
+      input {
+        width: 300px;
+      }
+    }
+  }
+
+  .container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-content: center;
+    margin-top: 30px;
+    span {
+      margin-bottom: 22px;
+      display: inline-block;
+    }
+  }
+
+  .button {
+    margin-top: 20px;
+    background: #009879 !important;
+    color: #fff;
+    top: 25px;
+    width: 150px;
+    height: 35px;
+    border-radius: 20px;
+    cursor: pointer;
+    border: none;
+  }
+
+  .card-list {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    justify-items: center;
+    align-items: center;
+    gap: 10px;
+    width: 80%;
+    margin: 20px auto;
+    span {
+      position: absolute;
+      right: 20px;
+      top: 5px;
+      font-size: 20px;
+      font-weight: 600;
+      color: #980000b7;
+      text-shadow: 1px 1px 2px #6402024d;
+    }
+  }
+
+  .card {
+    width: 200px;
+    height: 230px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    justify-items: center;
+    align-items: center;
+    border-radius: 15px;
+    box-shadow: 0 5px 10px 1px rgba(0, 0, 0, 0.2);
+    position: relative;
+    text-transform: capitalize;
+    h1 {
+      text-transform: uppercase;
+      color: #009879;
+    }
+    h3 {
+      margin-bottom: 20px;
+      border-bottom: 2px solid #009879;
+      color: #009879;
+    }
+    p {
+      padding-bottom: 10px;
+    }
+  }
+}
