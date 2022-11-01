@@ -1,0 +1,32 @@
+{
+  "students": [
+    {
+      "name": "Güntaç Beyzadeoğlu",
+      "instructor": "Orkun Durmaz",
+      "course": "Frontend",
+      "score": 100,
+      "id": 1
+    },
+    {
+      "name": "Şenay Şentürk",
+      "instructor": "Orkun Durmaz",
+      "course": "Frontend",
+      "score": 100,
+      "id": 2
+    },
+    {
+      "name": "Hicran Ertuğral",
+      "instructor": "Orkun Durmaz",
+      "course": "Frontend",
+      "score": 100,
+      "id": 3
+    },
+    {
+      "name": "İpek Gülşen Çelik",
+      "instructor": "Orkun Durmaz",
+      "course": "Frontend",
+      "score": 100,
+      "id": 4
+    }
+  ]
+}

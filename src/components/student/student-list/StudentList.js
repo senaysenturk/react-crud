@@ -1,24 +1,11 @@
 import React from 'react'
+import StudentCard from '../student-card/StudentCard'
 
-const StudentList = ({studentList, removeStudent}) => {
+const StudentList = ({studentList, removeStudent,isDeleteLoading}) => {
   return (
     <div>
         <div className="card-list">
-            {studentList.map((student, index) => (
-              <div className="card" key={index}>
-                <span
-                  id={student.id}
-                  onClick={()=> removeStudent(student.id)}
-                  className="removeButton"
-                >
-                  x
-                </span>
-                <h3>{student.name}</h3>
-                <p>{student.instructor}</p>
-                <p>{student.course}</p>
-                <p>{student.score}</p>
-              </div>
-            ))}
+            {studentList.map((student,index) => <StudentCard key ={student.id} student={student} removeStudent={removeStudent} isDeleteLoading={isDeleteLoading}/>)}
           </div>
     </div>
   )

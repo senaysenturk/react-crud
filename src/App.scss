@@ -88,6 +88,9 @@
       margin-bottom: 22px;
       display: inline-block;
     }
+    .loadingText{
+      margin-top: 100px;
+    }
   }
 
   .button {
@@ -112,15 +115,6 @@
     gap: 10px;
     width: 80%;
     margin: 20px auto;
-    span {
-      position: absolute;
-      right: 20px;
-      top: 5px;
-      font-size: 20px;
-      font-weight: 600;
-      color: #980000b7;
-      text-shadow: 1px 1px 2px #6402024d;
-    }
   }
 
   .card {
@@ -129,7 +123,6 @@
     display: flex;
     flex-direction: column;
     justify-content: center;
-    justify-items: center;
     align-items: center;
     border-radius: 15px;
     box-shadow: 0 5px 10px 1px rgba(0, 0, 0, 0.2);
@@ -147,5 +140,37 @@
     p {
       padding-bottom: 10px;
     }
+    .align-right-top {
+      position: absolute;
+      right: 20px;
+      width: 23px;
+      top: 5px;
+      font-size: 20px;
+      font-weight: 600;
+      color: #980000b7;
+      text-shadow: 1px 1px 2px #6402024d;
+    }
   }
+  .lds-dual-ring {
+    display: inline-block;
+  }
+  .lds-dual-ring:after {
+    content: " ";
+    display: block;
+    width: 18px;
+    height: 18px;
+    border-radius: 50%;
+    border: 2px solid #980000b7;
+    border-color: #980000b7 transparent #980000b7 transparent;
+    animation: lds-dual-ring 1.2s linear infinite;
+  }
+  @keyframes lds-dual-ring {
+    0% {
+      transform: rotate(0deg);
+    }
+    100% {
+      transform: rotate(360deg);
+    }
+  }
+  
 }
