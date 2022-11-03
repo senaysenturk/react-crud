@@ -8,39 +8,25 @@
   text-align: center;
   padding: 20px 0;
 
-  .table {
-    border-collapse: collapse;
-    margin: 25px 0;
-    font-size: 0.9em;
-    font-family: sans-serif;
-    min-width: 600px;
-    box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
-
-    thead {
-      tr {
-        background-color: #009879;
-        color: #ffffff;
-      }
+  .lds-dual-ring {
+    display: inline-block;
+  }
+  .lds-dual-ring:after {
+    content: " ";
+    display: block;
+    width: 18px;
+    height: 18px;
+    border-radius: 50%;
+    border: 2px solid #980000b7;
+    border-color: #980000b7 transparent #980000b7 transparent;
+    animation: lds-dual-ring 1.2s linear infinite;
+  }
+  @keyframes lds-dual-ring {
+    0% {
+      transform: rotate(0deg);
     }
-    th,
-    td {
-      padding: 12px 15px;
-    }
-    tbody {
-      tr {
-        border-bottom: 1px solid #dddddd;
-
-        &:nth-of-type(even) {
-          background-color: #f3f3f3;
-        }
-        &:last-of-type {
-          border-bottom: 2px solid #009879;
-        }
-        .active-row {
-          font-weight: bold;
-          color: #009879;
-        }
-      }
+    100% {
+      transform: rotate(360deg);
     }
   }
 
@@ -68,6 +54,7 @@
       margin-bottom: 10px;
       color: red;
     }
+    
   }
 
   @media(max-width: 900px) {
@@ -95,7 +82,7 @@
 
   .button {
     margin-top: 20px;
-    background: #009879 !important;
+    background: #009879;
     color: #fff;
     top: 25px;
     width: 150px;
@@ -103,6 +90,9 @@
     border-radius: 20px;
     cursor: pointer;
     border: none;
+    &:disabled{
+      background-color: #72aca0bd;
+    }
   }
 
   .card-list {
@@ -151,26 +141,6 @@
       text-shadow: 1px 1px 2px #6402024d;
     }
   }
-  .lds-dual-ring {
-    display: inline-block;
-  }
-  .lds-dual-ring:after {
-    content: " ";
-    display: block;
-    width: 18px;
-    height: 18px;
-    border-radius: 50%;
-    border: 2px solid #980000b7;
-    border-color: #980000b7 transparent #980000b7 transparent;
-    animation: lds-dual-ring 1.2s linear infinite;
-  }
-  @keyframes lds-dual-ring {
-    0% {
-      transform: rotate(0deg);
-    }
-    100% {
-      transform: rotate(360deg);
-    }
-  }
+ 
   
 }
