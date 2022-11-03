@@ -11,7 +11,7 @@ function App() {
   // const handleClick = e => {
   //   console.log("Clicked");
   // };
-const apiUrl = "http://localhost:5500/students";
+  const apiUrl = "http://localhost:5500/students";
   const [student, setStudent] = useState({
     name: "",
     instructor: "",
@@ -26,9 +26,9 @@ const apiUrl = "http://localhost:5500/students";
   });
   const [studentList, setStudentList] = useState([]);
   const [isLoading, setIsLoading] = useState(false);
-  const [isDeleteLoading, setIsDeleteLoading] = useState(false);
+  const [isAddLoading, setIsAddLoading] = useState(false);
+  const [isDisabled, setIsDisabled] = useState(false);
 
-  //axios.get("http://localhost:5500/students").then(res=>setStudent(res.data));
   const getStudents = async () => {
     try {
       setIsLoading(true);
@@ -42,41 +42,28 @@ const apiUrl = "http://localhost:5500/students";
   };
 
   useEffect(() => {
-    // axios.get("http://localhost:5500/students").then((res) => {
-    //     // console.log("Axios get");
-    //     setStudentList(res.data);
-    //   });
-
     getStudents();
   }, []);
 
-  const createStudentObj = async(e) => {
+  const createStudentObj = async (e) => {
     e.preventDefault();
     setError(student);
-    // if (!student.score) {
-    //   student.score = 0;
-    // }
 
     if (Object.values(student).every((value) => value)) {
-      // setStudentList((prevStudent) => [
-      //   ...prevStudent,
-      //   {
-      //     id: `${Math.ceil(Math.random() * 1000)}`,
-      //     ...student,
-      //   },
-      // ]);
       try {
-        axios.post(apiUrl, {
-          name: student.name,
-          instructor: student.instructor,
-          course: student.course,
-          score: student.score,
-          id: `${Math.ceil(Math.random() * 1000)}`,
-        });
-          await axios
-          .get(`${apiUrl}`)
-          .then((res) => setStudentList(res.data));
+        setIsDisabled(true);
+        setIsAddLoading(true);
+
+        const response = await axios.post(apiUrl, { ...student });
+        if (response.status === 201) {
+          const res = await axios.get(`${apiUrl}`);
+          setStudentList(res.data);
+        }
+        setIsDisabled(false);
+        setIsAddLoading(false);
       } catch (error) {
+        setIsAddLoading(false);
+        setIsDisabled(false);
         console.log(error.message);
       }
 
@@ -88,30 +75,27 @@ const apiUrl = "http://localhost:5500/students";
   const handleSetStudent = (value) =>
     setStudent((prevStudent) => ({ ...prevStudent, ...value }));
 
-  const removeStudent = async(id) => {
+  const removeStudent = async (id) => {
     try {
-      setIsDeleteLoading(true);
-      await axios
-        .delete(`${apiUrl}/${id}`);
-        await axios
-        .get(`${apiUrl}`)
-        .then((res) => setStudentList(res.data));
-      setIsDeleteLoading(false);
+      const deleteRes = await axios.delete(`${apiUrl}/${id}`);
+      if (deleteRes.status === 200) {
+        const res = await axios.get(`${apiUrl}`);
+        setStudentList(res.data);
+      }
     } catch (error) {
-      setIsDeleteLoading(false);
       console.log(error.message);
     }
   };
 
   return (
-    //Renderlanacak veri return içine yazılır
-
     <div className="App">
       <StudentForm
         createStudentObj={createStudentObj}
         handleSetStudent={handleSetStudent}
         error={error}
         student={student}
+        isAddLoading={isAddLoading}
+        isDisabled={isDisabled}
       />
       <div className="container">
         {isLoading ? (
@@ -120,7 +104,6 @@ const apiUrl = "http://localhost:5500/students";
           <StudentList
             studentList={studentList}
             removeStudent={removeStudent}
-            isDeleteLoading={isDeleteLoading}
           />
         ) : (
           <h4 className="loadingText">List is empty</h4>

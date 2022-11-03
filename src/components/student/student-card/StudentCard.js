@@ -1,16 +1,20 @@
-import React from "react";
+import React, { useState } from "react";
 
-const StudentCard = ({ student, removeStudent, isDeleteLoading }) => {
+const StudentCard = ({ student, removeStudent }) => {
   const { name, instructor, course, score, id } = student;
-  console.log(id);
+  const [isDeleteLoading, setIsDeleteLoading] = useState(false)
   return (
     <div className="card" key={id}>
       {isDeleteLoading ? (
-        <div class="lds-dual-ring align-right-top"></div>
+        <div className="lds-dual-ring align-right-top"></div>
       ) : (
         <span
           id={id}
-          onClick={() => removeStudent(id)}
+          onClick={() => {
+            setIsDeleteLoading(true);
+            removeStudent(id)
+          }
+        }
           className="align-right-top"
         >
           x

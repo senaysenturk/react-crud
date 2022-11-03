@@ -1,6 +1,7 @@
 import React from 'react'
 
-const StudentForm = ({createStudentObj, handleSetStudent, error, student}) => {
+const StudentForm = ({createStudentObj, handleSetStudent, error, student, isAddLoading,isDisabled}) => {
+  
   return (
     <div className="register-form">
     <h1>Student Register</h1>
@@ -72,9 +73,12 @@ const StudentForm = ({createStudentObj, handleSetStudent, error, student}) => {
         </span>
       )}
 
-      <button className="button" onClick={createStudentObj}>
-        Submit
+      <button disabled={isDisabled} className={isDisabled ? ("button disabled") : ("button")} onClick={createStudentObj}>
+      {isAddLoading ? (
+        <div className="lds-dual-ring align-right-top"></div>       
+      ) : "Submit"}
       </button>
+      
     </form>
   </div>
   )

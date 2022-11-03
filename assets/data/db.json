@@ -1,32 +1,39 @@
 {
   "students": [
     {
-      "name": "Güntaç Beyzadeoğlu",
-      "instructor": "Orkun Durmaz",
-      "course": "Frontend",
-      "score": 100,
-      "id": 1
-    },
-    {
-      "name": "Şenay Şentürk",
+      "name": "Hicran Ertuğral",
       "instructor": "Orkun Durmaz",
       "course": "Frontend",
       "score": 100,
       "id": 2
     },
     {
-      "name": "Hicran Ertuğral",
+      "name": "Ahmet Bilgin",
       "instructor": "Orkun Durmaz",
       "course": "Frontend",
       "score": 100,
-      "id": 3
+      "id": 5
     },
     {
-      "name": "İpek Gülşen Çelik",
-      "instructor": "Orkun Durmaz",
-      "course": "Frontend",
-      "score": 100,
-      "id": 4
+      "name": "Ora Terrell",
+      "instructor": "Cum voluptatem dolo",
+      "course": "Voluptatem odio rem",
+      "score": "Distinctio Quam et ",
+      "id": 17
+    },
+    {
+      "name": "Alfonso Gaines",
+      "instructor": "Quis laboris molesti",
+      "course": "Qui doloremque quo v",
+      "score": "At et qui beatae min",
+      "id": 18
+    },
+    {
+      "name": "q",
+      "instructor": "q",
+      "course": "q",
+      "score": "q",
+      "id": 19
     }
   ]
 }
