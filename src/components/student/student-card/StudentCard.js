@@ -2,7 +2,7 @@ import React, { useState } from "react";
 
 const StudentCard = ({ student, removeStudent }) => {
   const { name, instructor, course, score, id } = student;
-  const [isDeleteLoading, setIsDeleteLoading] = useState(false)
+  const [isDeleteLoading, setIsDeleteLoading] = useState(false);
   return (
     <div className="card" key={id}>
       {isDeleteLoading ? (
@@ -12,9 +12,8 @@ const StudentCard = ({ student, removeStudent }) => {
           id={id}
           onClick={() => {
             setIsDeleteLoading(true);
-            removeStudent(id)
-          }
-        }
+            removeStudent(id);
+          }}
           className="align-right-top"
         >
           x

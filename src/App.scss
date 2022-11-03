@@ -54,10 +54,9 @@
       margin-bottom: 10px;
       color: red;
     }
-    
   }
 
-  @media(max-width: 900px) {
+  @media (max-width: 900px) {
     .register-form {
       input {
         width: 300px;
@@ -75,7 +74,7 @@
       margin-bottom: 22px;
       display: inline-block;
     }
-    .loadingText{
+    .loadingText {
       margin-top: 100px;
     }
   }
@@ -90,7 +89,7 @@
     border-radius: 20px;
     cursor: pointer;
     border: none;
-    &:disabled{
+    &:disabled {
       background-color: #72aca0bd;
     }
   }
@@ -141,6 +140,4 @@
       text-shadow: 1px 1px 2px #6402024d;
     }
   }
- 
-  
 }

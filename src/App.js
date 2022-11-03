@@ -6,11 +6,6 @@ import StudentForm from "./components/student/student-form/StudentForm";
 import StudentList from "./components/student/student-list/StudentList";
 
 function App() {
-  //Scriptlerin yazıldığı kısım
-  // let name = "React";
-  // const handleClick = e => {
-  //   console.log("Clicked");
-  // };
   const apiUrl = "http://localhost:5500/students";
   const [student, setStudent] = useState({
     name: "",
