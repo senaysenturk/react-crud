@@ -22,6 +22,7 @@ p {
 
   .lds-dual-ring {
     display: inline-block;
+    padding: 10px 10px 10px 5px;
   }
   .lds-dual-ring:after {
     content: " ";
@@ -126,7 +127,7 @@ p {
     position: relative;
     text-transform: capitalize;
     cursor: pointer;
-    gap: 20px;
+    gap: 10px;
     .card-buttons {
       // padding: 10px;
       height: fit-content;
