@@ -4,6 +4,18 @@
   box-sizing: border-box;
   list-style: none;
 }
+h1 {
+  text-transform: uppercase;
+  color: #2C3639;
+}
+h3 {
+  margin-bottom: 20px;
+  border-bottom: 2px solid #3F4E4F;
+  color: #3F4E4F;
+}
+p {
+  padding-bottom: 10px;
+}
 .App {
   text-align: center;
   padding: 20px 0;
@@ -17,8 +29,8 @@
     width: 18px;
     height: 18px;
     border-radius: 50%;
-    border: 2px solid #980000b7;
-    border-color: #980000b7 transparent #980000b7 transparent;
+    border: 2px solid #4E6C50;
+    border-color: #4E6C50 transparent #4E6C50 transparent;
     animation: lds-dual-ring 1.2s linear infinite;
   }
   @keyframes lds-dual-ring {
@@ -50,10 +62,6 @@
       padding: 0 18px;
       margin: 20px 0 5px;
     }
-    span {
-      margin-bottom: 10px;
-      color: red;
-    }
   }
 
   @media (max-width: 900px) {
@@ -71,8 +79,7 @@
     align-content: center;
     margin-top: 30px;
     span {
-      margin-bottom: 22px;
-      display: inline-block;
+      height: fit-content;
     }
     .loadingText {
       margin-top: 100px;
@@ -92,6 +99,9 @@
     &:disabled {
       background-color: #72aca0bd;
     }
+    &:hover{
+      background: #48b09b;
+    }
   }
 
   .card-list {
@@ -108,36 +118,43 @@
 
   .card {
     width: 200px;
-    height: 230px;
+    height: 250px;
     display: flex;
     flex-direction: column;
-    justify-content: center;
-    align-items: center;
     border-radius: 15px;
     box-shadow: 0 5px 10px 1px rgba(0, 0, 0, 0.2);
     position: relative;
     text-transform: capitalize;
-    h1 {
-      text-transform: uppercase;
-      color: #009879;
-    }
-    h3 {
-      margin-bottom: 20px;
-      border-bottom: 2px solid #009879;
-      color: #009879;
-    }
-    p {
-      padding-bottom: 10px;
-    }
-    .align-right-top {
-      position: absolute;
-      right: 20px;
-      width: 23px;
-      top: 5px;
+    cursor: pointer;
+    gap: 20px;
+    .card-buttons {
+      // padding: 10px;
+      height: fit-content;
+      cursor: pointer;
+      display: flex;
+      justify-content: flex-end;
       font-size: 20px;
-      font-weight: 600;
-      color: #980000b7;
-      text-shadow: 1px 1px 2px #6402024d;
+      .delete-button {
+        color: #980000b7;
+      }
+      .edit-button {
+        color: #005698b7;
+      }
+      .save-button{
+        color: #379237;
+      }
+      span{
+        padding: 10px 10px 10px 5px;
+      }
     }
+    .card-content {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      padding: 0 10px;
+    }
+    [contenteditable]:focus {
+      outline: 0px solid transparent;
+  }
   }
 }

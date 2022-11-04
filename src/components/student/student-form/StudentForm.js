@@ -68,6 +68,7 @@ const StudentForm = ({
           name="score"
           id="score"
           placeholder="Score"
+          pattern="[0-9]+" minlength="1"
           value={student.score}
           onChange={(e) => {
             handleSetStudent({ score: e.target.value });

@@ -1,32 +1,39 @@
 {
   "students": [
     {
-      "name": "Hicran Ertuğral",
-      "instructor": "Orkun Durmaz",
-      "course": "Frontend",
-      "score": 100,
+      "name": "Marah Santiago",
+      "instructor": "Aut non possimus de",
+      "course": "Tempora quis neque a",
+      "score": "Dolorum animi labor",
+      "id": 1
+    },
+    {
+      "name": "Dominique Marks",
+      "instructor": "Incidunt maxime eni",
+      "course": "Sit ut sint itaque",
+      "score": "Soluta labore elit ",
       "id": 2
     },
     {
-      "name": "Ahmet Bilgin",
-      "instructor": "Orkun Durmaz",
-      "course": "Frontend",
-      "score": 100,
+      "name": "Cooper Lawrence",
+      "instructor": "Veniam sint commod",
+      "course": "Culpa veritatis volu",
+      "score": "Voluptatibus assumen",
+      "id": 3
+    },
+    {
+      "name": "Diana Wooten",
+      "instructor": "Ullamco ipsam sit vo",
+      "course": "Unde et atque quisqu",
+      "score": "Necessitatibus repre",
+      "id": 4
+    },
+    {
+      "name": "Patience Finch",
+      "instructor": "Quis ad id culpa qua",
+      "course": "Incididunt molestiae",
+      "score": "Tempora non laudanti",
       "id": 5
-    },
-    {
-      "name": "Ora Terrell",
-      "instructor": "Cum voluptatem dolo",
-      "course": "Voluptatem odio rem",
-      "score": "Distinctio Quam et ",
-      "id": 17
-    },
-    {
-      "name": "Alfonso Gaines",
-      "instructor": "Quis laboris molesti",
-      "course": "Qui doloremque quo v",
-      "score": "At et qui beatae min",
-      "id": 18
     }
   ]
 }

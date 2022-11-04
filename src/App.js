@@ -13,6 +13,7 @@ function App() {
     course: "",
     score: "",
   });
+  const [editingStudent, setEditingStudent] = useState({});
   const [error, setError] = useState({
     name: true,
     instructor: true,
@@ -67,9 +68,27 @@ function App() {
     console.log(student);
   };
 
-  const handleSetStudent = (value) =>
+  const handleSetStudent = (value) =>{
     setStudent((prevStudent) => ({ ...prevStudent, ...value }));
+  }
 
+
+  const editStudent = async (id) => {
+    try {
+      const editResponse = await axios.patch(`${apiUrl}/${id}`, {...editingStudent});
+      if (editResponse.status === 200) {
+        const res = await axios.get(`${apiUrl}`);
+        setStudentList(res.data);
+      }
+    } catch (error) {
+      console.log(error.message);
+    }
+  };
+
+  const handleEditStudent = (value) =>{
+      setEditingStudent((prevStudent) => ({ ...prevStudent, ...value }));
+  }
+  
   const removeStudent = async (id) => {
     try {
       const deleteRes = await axios.delete(`${apiUrl}/${id}`);
@@ -99,6 +118,8 @@ function App() {
           <StudentList
             studentList={studentList}
             removeStudent={removeStudent}
+            editStudent={editStudent}
+            handleEditStudent={handleEditStudent}
           />
         ) : (
           <h4 className="loadingText">List is empty</h4>
